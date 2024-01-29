@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="width=device-width, initial-scale=10., maximum-scale=1.0, user-scalable=no">
+  <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+  <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: https://code.jquery.com; default-src * 'unsafe-inline'; style-src 'self' https://code.jquery.com 'unsafe-inline'; media-src *" />
+
+  <!-- region jQuery Mobile -->
+  <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!-- endregion -->
+
+  <!-- region Firebase -->
+  <!--Firebase App is always required and must be first -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+  <!-- Add additional services that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <!-- endregion -->
+
+  <script src="js/index.js"></script>
+  <script src="js/facade.js"></script>
+
+  <title>Firebase Lab</title>
+</head>
+<body>
+
+!-- region Read page-->
+<div id="pageLab" data-role="page">
+  <header data-role="header" data-position="fixed" data-theme="a">
+    <h1>Lab 2</h1>
+    <div data-role="navbar" data-iconpos="top">
+      <ul>
+        <li><a href="#pageLab" data-icon="grid" class="ui-btn-active ui-state-persist">Read & Write Data</a></li>
+          </ul>
+    </div>
+  </header>
+
+  <section data-role="content">
+    <div id="readDiv">
+      <h2>Read Data</h2>
+
+      <label for="txtSampleJoke">Joke:</label>
+      <input type="text" id="txtSampleJoke" name="sampleJoke" value="" data-mini="true" placeholder="Enter a sample joke"  >
+
+      <label for="txtSamplePunchline">Punchline:</label>
+      <input type="text" id="txtSamplePunchline" name="samplePunchline" value="" data-mini="true" placeholder="Enter a sample punchline" >
+
+
+      <h2>Write Data</h2>
+
+      <label for="txtStudentJoke">Joke:</label>
+      <input type="text" id="txtStudentJoke" name="studentJoke" value="" data-mini="true" placeholder="Enter a joke" >
+
+      <label for="txtStudentPunchline">Punchline:</label>
+      <input type="text" id="txtStudentPunchline" name="studentPunchline" value="" data-mini="true" placeholder="Enter a punchline" >
+
+      <button type="button" id="btnSaveJoke" name="btnSaveJoke" data-icon="plus" class="ui-btn-active">Save Joke
+      </button>
+
+    </div>
+
+  </section>
+  <footer data-role="footer" data-position="fixed" data-theme="a">
+    <h1>&copy; Student</h1>
+  </footer>
+</div>
+<!-- endregion -->
+<script>
+  // Initialize Firebase
+  
+    const firebaseConfig = {
+
+    apiKey: "AIzaSyDnM9T8BRIXKlrGc2DfePg9LpQU9sAuCzg",
+    authDomain: "info6127w24labs-1211047.firebaseapp.com",
+    databaseURL: "https://info6127w24labs-1211047-default-rtdb.firebaseio.com",
+    projectId: "info6127w24labs-1211047",
+    storageBucket: "info6127w24labs-1211047.appspot.com",
+    messagingSenderId: "816065720954",
+    appId: "1:816065720954:web:9b89dd1f06990d3335c1c3"
+  };
+ firebase.initializeApp(firebaseConfig);
+</script>
+
+
+
+
+</body>
+</html>
